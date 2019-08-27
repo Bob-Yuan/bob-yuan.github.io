@@ -62,6 +62,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-django2中namespace和name的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/27/django2中namespace和name的使用/" class="article-date">
+  <time datetime="2019-08-27T06:44:24.000Z" itemprop="datePublished">2019-08-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/27/django2中namespace和name的使用/">django2中namespace和name的使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####一、在Django &lt;= 1.11 我们通过关键词namespace参数定义名称空间</p>
+<p><strong>1、projects/urls.py</strong></p>
+<pre><code>from django.conf.urls import url,include
+
+urlpatterns = [
+    url(r&apos;blog/&apos;, include(&apos;blog.urls&apos;, namespace=&apos;blog&apos;)) 
+]</code></pre><p><strong>2、apps/urls.py</strong></p>
+<pre><code>from django.conf.urls import url
+from . import views
+
+urlpatterns = [
+    url(r&apos;^login/$&apos;, views.login, name=&quot;login&quot;),
+]</code></pre><p>####二、在Django 2.0+ 我们可以省略namespace，把namespace定义到被include的urls.py中去，使用app_name定义名称空间。</p>
+<p><strong>1、projects/urls.py</strong></p>
+<pre><code>urlpatterns = [
+    path(r&apos;^blog/&apos;, include(&apos;blog.urls&apos;)) 
+]</code></pre><p><strong>2、apps/urls.py</strong></p>
+<pre><code>from django.urls import path
+from . import views
+
+app_name = &apos;blog&apos;
+
+urlpatterns = [
+    path(&apos;login/&apos;, views.login, name=&quot;login&quot;),
+]</code></pre><p>####三、在templates中我们还是像原来一样的使用方法</p>
+<pre><code>{% url 'blog:login' %}</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/27/django2中namespace和name的使用/" data-id="cjzth0ucx0001a8veog0borzs" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-boy" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/27/hello-boy/" class="article-date">
@@ -88,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/27/hello-boy/" data-id="cjztd1ifv0000a4ve5js0x31m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/27/hello-boy/" data-id="cjzth0ucl0000a8vebkdd4068" class="article-share-link">Share</a>
       
       
     </footer>
@@ -137,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/27/hello-world/" data-id="cjztd1ig50001a4vei8e1y7q6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/27/hello-world/" data-id="cjzth0udt0002a8veckiydj33" class="article-share-link">Share</a>
       
       
     </footer>
@@ -176,6 +237,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/08/27/django2中namespace和name的使用/">django2中namespace和name的使用</a>
+          </li>
         
           <li>
             <a href="/2019/08/27/hello-boy/">hello boy!</a>
