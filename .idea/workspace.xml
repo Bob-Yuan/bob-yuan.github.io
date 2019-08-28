@@ -1,7 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04411990-5d20-4286-851a-fee41c59327a" name="Default Changelist" comment="" />
+    <list default="true" id="04411990-5d20-4286-851a-fee41c59327a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/source/categories/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/tags/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/_config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/languages/en.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/languages/ja.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/languages/nl-NL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/languages/zh-CN.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/languages/zh-TW.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/after-footer.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/archive.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/footer.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/head.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/header.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/index-item.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/loading.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/menu.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/paginator.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/plugins/baidu.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/plugins/disqus.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/plugins/dynamic-title.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/plugins/gitalk.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/plugins/gitment.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/plugins/google-analytics.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/plugins/hyper-comments.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/plugins/mathjax.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/plugins/page-visit.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/plugins/site-visit.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/plugins/tajs.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/plugins/uyan.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/plugins/valine.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/post.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/post/category.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/post/comment.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/post/copyright.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/post/date.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/post/head-meta.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/post/nav.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/post/reward-btn.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/post/reward.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/post/share-fab.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/post/share.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/post/tag.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/post/title.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/post/toc.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/post/updated.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/script.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/search.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/_partial/tags-bar.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/archive.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/categories.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/category.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/index.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/layout.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/page.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/post.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/tag.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/layout/tags.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/scripts/plugins.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/archives.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/article.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/fontawesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/gotop.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/header.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/highlight.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/layout.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/lightbox.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/loading.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/page.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/postlist.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/reward.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/roboto.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/search.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/share.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/tags.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/variable.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_partial/waves.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/_plugin/valine.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/fontawesome/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/fontawesome/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/fontawesome/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/fontawesome/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/fontawesome/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/fontawesome/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Bold.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Bold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Bold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Light.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Light.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Light.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Medium.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Medium.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Medium.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Thin.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Thin.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Thin.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/fonts/roboto/Roboto-Thin.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/css/style.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/img/alipay.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/img/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/img/brand.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/img/cc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/img/img-err.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/img/img-loading.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/img/wechat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/js/main.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/js/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/indigo/source/js/search.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/django2中namespace和name的使用.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/django2中namespace和name的使用.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,11 +135,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.deploy_git" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Pzr2O4D7xoshvmcWvjQpZRTpWD" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -47,6 +177,7 @@
       <option name="presentableId" value="Default" />
       <updated>1566887557994</updated>
       <workItem from="1566887574267" duration="1836000" />
+      <workItem from="1566982483083" duration="2494000" />
     </task>
     <servers />
   </component>
@@ -58,10 +189,15 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
