@@ -12,14 +12,21 @@ menu:
     text: 主页
     url: /
   archives:
+    text: 归档
     url: /archives
   tags:
+    text: 标签
     url: /tags
   th-list:
-    text: Categories
+    text: 分类
     url: /categories
   github:
+    text: Github
     url: https://github.com/bob-yuan
+    target: _blank
+  address-book:
+    text: 简历
+    url: https://www.qxdq.xyz
     target: _blank
 #  weibo:
 #    url: http://www.weibo.com/ysweb
@@ -35,16 +42,16 @@ avatar_link: /
 # 头像背景图
 brand: /img/brand.jpg
 # favicon
-favicon: /favicon.ico
+favicon: /img/favicon.ico
 
 # email
-email: 634206017@qq.com
+email: yuanbo95@qq.com
 
 # 设置 Android L Chrome 浏览器状态栏颜色
 color: '#3F51B5'
 
 # 页面标题
-tags_title: Tags
+tags_title: boy
 archives_title: Archives
 categories_title: Categories
 
@@ -62,10 +69,10 @@ show_last_updated: true
 share: true
 
 # 是否开启打赏，关闭 reward: false
-reward:
-  title: 谢谢大爷~
-  wechat: /img/wechat.jpg     #微信，关闭设为 false
-  alipay: /img/alipay.jpg     #支付宝，关闭设为 false
+reward: false
+  #title: 谢谢大爷~
+  #wechat: false     #微信，关闭设为 false  /img/wechat.jpg
+  #alipay: false     #支付宝，关闭设为 false /img/alipay.jpg
 
 # 是否开启搜索
 search: true
@@ -150,7 +157,7 @@ canonical: false
 since_year: 2018
 
 # 用户页面中作者相关的描述性文字，如不需要设为 false
-about: 用户页面中作者相关的描述性文字，如不需要设为 false
+about: false
 
 # “不蒜子”访问量统计，详见 http://ibruce.info/2015/04/04/busuanzi/
 visit_counter:

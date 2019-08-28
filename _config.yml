@@ -8,12 +8,12 @@ subtitle: Python学习与分享
 description: Python爱好者
 keywords: Python
 author: 袁博
-language: zh-Hans
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://www.qxdq.xyz
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
