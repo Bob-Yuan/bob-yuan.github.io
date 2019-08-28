@@ -1,0 +1,231 @@
+---
+layout: page
+---
+<style>
+    .sidebar {
+        position: static;
+        float: left;
+        font-size: 14px;
+    }
+
+    .sidebar-left {
+        border-right: 1px solid #eaecef;
+        margin-right: 10px;
+    }
+
+    .sidebar-left,
+    .sidebar-left>div {
+        width: 280px;
+    }
+
+    .sidebar-right,
+    .sidebar-right>div {
+        width: 260px;
+    }
+
+    .sidebar-wrapper li {
+        list-style-type: square;
+    }
+
+    .sidebar-wrapper a {
+        color: rgba(0, 0, 0, 0.9);
+        font-size: 14px;
+    }
+
+    .sidebar-active {
+        color: #337ab7 !important;
+        font-weight: bold;
+    }
+
+    .sidebar-wrapper section {
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+
+    .sidebar-fixed {
+        position: fixed;
+        top: 46px;
+        margin-top: 0;
+        max-height: 81%;
+        z-index: 1;
+    }
+</style>
+<style>
+    .post-container {
+        overflow: hidden;
+    }
+
+    .post-item-date {
+        margin-left: 10px;
+        color: hsla(0, 0%, 71%, .9);
+        font-size: 0.85em;
+    }
+
+    .series_links {
+        border: 1px solid #eaecef;
+        padding: 15px;
+        background-color: #fff8dc;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+</style>
+<!-- Post Content -->
+<aside class="sidebar sidebar-left hidden-xs hidden-sm">
+    <div></div>
+    <div class="sidebar-wrapper" style="top: -60px">
+        <section><%- partial('_widget/summary') %></section>
+        <% var categories = (page.categories || []).map(item => item)%>
+        <% if (categories.length){  var category = categories[0] %>
+        <section>
+            <h3><%= category.name %></h3>
+            <ul>
+                <% category.posts.sort('date').map(function(post, index){ %>
+                <li>
+                    <a href="<%= config.root %><%- post.path %>"
+                        class="<%= post.path===page.path ? 'sidebar-active':''%>"><%= post.title.split(' - ').reverse()[0] %></a>
+                </li>
+                <% }) %>
+            </ul>
+        </section>
+        <% } %>
+        <% var recentSize = categories.length ? 5 : 10 %>
+        <section>
+            <h3>最近的文章</h3>
+            <ul>
+                <% site.posts.sort('date').reverse().slice(0, recentSize).map(function(post, index){ %>
+                <li>
+                    <a href="<%= config.root %><%- post.path %>"><%= post.title.split(' - ').reverse()[0] %></a>
+                </li>
+                <% }) %>
+            </ul>
+        </section>
+    </div>
+</aside>
+<div class="col-xs-12">
+    <article class="post-container">
+        <h1> <%- page.title %> </h1>
+
+        <% var categories = (page.categories || []).map(item => item)%>
+
+        <% if (categories.length){  var category = categories[0] %>
+        <div class="hidden-lg hidden-md series_links">
+            <p> <strong> <%= category.name %>系列文章链接：</strong></p>
+            <ul>
+                <% category.posts.sort('date').map(function(post, index){ %>
+                <li>
+                    <a href="<%= config.root %><%- post.path %>"><%- post.title || "Untitled" %></a>
+                    <span class="post-item-date">(<%= post.date.format('ll') %>)</span>
+                </li>
+                <% }) %>
+            </ul>
+        </div>
+        <% } %>
+        <% if(page.github) { %>
+        <blockquote>
+            <p>源代码/数据集已上传到
+                <a href="<%= page.github %>" target="_blank" rel="noopener">
+                    Github - <%= page.github.split('/')[4] %>
+                </a>
+            </p>
+        </blockquote>
+        <% } %>
+        <% var file_name = page.path.split('/').reverse()[0] %>
+        <%- page.content %>
+        <!-- 文章末尾的提示 start -->
+        <% if (config.post_tips && config.post_tips.find_me ) {%>
+        <p>
+            本站永久域名<strong>「 <a href="<%= config.root %><%= page.path %>"><%= config.url.split('/').reverse()[0]%></a>
+                」</strong>，也可搜索<strong>「 <%= config.title %> 」</strong>找到我。
+        </p>
+        <% }%>
+        <% if (config.post_tips && config.post_tips.zhihu_zhuanlan ) {%>
+        <p>期待关注我的<strong>「 <a href="<%= config.post_tips.zhihu_zhuanlan %>">知乎专栏</a>」</strong>，所有文章可在<strong>「 知乎APP
+                」</strong>查看。</p>
+        <% }%>
+        <!-- 文章末尾的提示 end -->
+        <%-partial('_widget/generate-qrcode') %>
+        <hr>
+        <div>
+            <p>
+                <span><%- __('tags')%>: </span>
+                <% page.tags.each(function(tag) { %>
+                <a href="<%- config.root%>tags/#<%- tag.name%>">
+                    <code key="<%- tag.name%>" class="post-label">#<%- tag.name%></code>
+                </a>
+                <% }) %>
+            </p>
+            <% if ((page.categories || []).length){ %>
+            <p>
+                <span><%- __('categories')%>: </span>
+                <% page.categories.each(function(category) { %>
+                <a href="<%- config.root%>series/#<%- category.name%>">
+                    <code key="<%- category.name%>" class="post-label"><%- category.name%></code>
+                </a>
+                <% }) %>
+            </p>
+            <% } %>
+            <p>
+                <span>发表于<%= page.date.format('YYYY-MM-DD HH:mm:ss') %>，最后修改于<%= page.updated.format('YYYY-MM-DD HH:mm:ss') %>。</span>
+            </p>
+            <p><span>本站文章欢迎链接分享，禁止全文转载。</span></p>
+        </div>
+        <hr />
+        <%-partial('_partial/prev-next-post') %>
+    </article>
+    <!-- 赞赏 -->
+    <%- partial('_widget/reward') %>
+    <!-- 推荐阅读三篇文章 -->
+    <div style="margin-top: 20px">
+        <h3>推荐阅读</h3>
+        <%  let randomInt = (max) => Math.floor(Math.random() * Math.floor(max));
+                    let choices = []
+                    let posts = []
+                    if (site.posts.length >= 3) {
+                        while(choices.length < 3) {
+                            let num = randomInt(site.posts.length);
+                            choices.indexOf(num) === -1 && choices.push(num)
+                        }
+                    } else {
+                        choices = [0, 1, 2]
+                    }
+                    site.posts.sort('date').reverse().each(function(post, i){
+                        if (choices.indexOf(i) !== -1) { 
+            
+                    %>
+        <%- partial('_widget/post-preview', {post: post}) %>
+        <% }}); %>
+    </div>
+    <div style="margin: 20px 0">
+        <!-- 标签列表 -->
+        <%- partial('_widget/featured-tags') %>
+    </div>
+    <!-- 评论 -->
+    <%- partial('_widget/comments') %>
+</div>
+<aside class="sidebar sidebar-right hidden-md hidden-xs hidden-sm">
+    <div></div>
+    <div class="sidebar-wrapper">
+        <section><%- partial('_partial/toc') %></section>
+        <%- partial('_widget/google-ad', {type: 'custom'}) %>
+        <%- partial('_widget/google-ad', {type: '250'}) %>
+        <%- partial('_widget/google-ad', {type: '250'}) %>
+        <%- partial('_widget/google-ad', {type: '250'}) %>
+    </div>
+</aside>
+<script>
+    (function () {
+        [].slice.call(document.querySelectorAll('.sidebar .sidebar-wrapper')).forEach(function (ele, index) {
+            var last = 0
+            window.addEventListener("scroll", function (e) {
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                var isDown = scrollTop > last;
+                var pos = getPosition(ele).y - scrollTop;
+                var downLimit = index == 0 ? -50 : 40;
+                var upLimit = index == 0 ? -100 : 40;
+                isDown && pos <= downLimit && ele.classList.add("sidebar-fixed");
+                !isDown && pos > upLimit && ele.classList.remove("sidebar-fixed");
+                last = scrollTop
+            })
+        })
+    })();
+</script>
