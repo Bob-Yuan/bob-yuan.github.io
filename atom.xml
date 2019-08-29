@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.qxdq.xyz/"/>
-  <updated>2019-08-28T11:14:27.250Z</updated>
+  <updated>2019-08-29T16:56:41.187Z</updated>
   <id>https://www.qxdq.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.qxdq.xyz/2019/08/28/hello-world/"/>
     <id>https://www.qxdq.xyz/2019/08/28/hello-world/</id>
     <published>2019-08-28T11:14:27.250Z</published>
-    <updated>2019-08-28T11:14:27.250Z</updated>
+    <updated>2019-08-29T16:56:41.187Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
@@ -34,6 +34,8 @@
     
     </summary>
     
+      <category term="C/C++" scheme="https://www.qxdq.xyz/categories/C-C/"/>
+    
     
   </entry>
   
@@ -42,7 +44,7 @@
     <link href="https://www.qxdq.xyz/2019/08/27/django2%E4%B8%ADnamespace%E5%92%8Cname%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>https://www.qxdq.xyz/2019/08/27/django2中namespace和name的使用/</id>
     <published>2019-08-27T06:44:24.000Z</published>
-    <updated>2019-08-29T13:32:29.498Z</updated>
+    <updated>2019-08-29T17:35:22.017Z</updated>
     
     <content type="html"><![CDATA[<h4 id="一、在Django-lt-1-11-我们通过关键词namespace参数定义名称空间"><a href="#一、在Django-lt-1-11-我们通过关键词namespace参数定义名称空间" class="headerlink" title="一、在Django &lt;= 1.11 我们通过关键词namespace参数定义名称空间"></a>一、在Django &lt;= 1.11 我们通过关键词namespace参数定义名称空间</h4><p><strong>1、projects/urls.py</strong></p><pre><code>from django.conf.urls import url,includeurlpatterns = [    url(r&apos;blog/&apos;, include(&apos;blog.urls&apos;, namespace=&apos;blog&apos;)) ]</code></pre><p><strong>2、apps/urls.py</strong></p><pre><code>from django.conf.urls import urlfrom . import viewsurlpatterns = [    url(r&apos;^login/$&apos;, views.login, name=&quot;login&quot;),]</code></pre><h4 id="二、在Django-2-0-我们可以省略namespace，把namespace定义到被include的urls-py中去，使用app-name定义名称空间。"><a href="#二、在Django-2-0-我们可以省略namespace，把namespace定义到被include的urls-py中去，使用app-name定义名称空间。" class="headerlink" title="二、在Django 2.0+ 我们可以省略namespace，把namespace定义到被include的urls.py中去，使用app_name定义名称空间。"></a>二、在Django 2.0+ 我们可以省略namespace，把namespace定义到被include的urls.py中去，使用app_name定义名称空间。</h4><p><strong>1、projects/urls.py</strong></p><pre><code>urlpatterns = [    path(r&apos;^blog/&apos;, include(&apos;blog.urls&apos;)) ]</code></pre><p><strong>2、apps/urls.py</strong></p><pre><code>from django.urls import pathfrom . import viewsapp_name = &apos;blog&apos;urlpatterns = [    path(&apos;login/&apos;, views.login, name=&quot;login&quot;),]</code></pre><h4 id="三、在templates中我们还是像原来一样的使用方法"><a href="#三、在templates中我们还是像原来一样的使用方法" class="headerlink" title="三、在templates中我们还是像原来一样的使用方法"></a>三、在templates中我们还是像原来一样的使用方法</h4><pre><code>{% url 'blog:login' %}</code></pre>]]></content>
     
@@ -55,6 +57,14 @@
     
     </summary>
     
+      <category term="python" scheme="https://www.qxdq.xyz/categories/python/"/>
+    
+    
+      <category term="a" scheme="https://www.qxdq.xyz/tags/a/"/>
+    
+      <category term="b" scheme="https://www.qxdq.xyz/tags/b/"/>
+    
+      <category term="c" scheme="https://www.qxdq.xyz/tags/c/"/>
     
   </entry>
   
@@ -63,7 +73,7 @@
     <link href="https://www.qxdq.xyz/2019/08/27/hello-boy/"/>
     <id>https://www.qxdq.xyz/2019/08/27/hello-boy/</id>
     <published>2019-08-27T04:58:10.000Z</published>
-    <updated>2019-08-29T13:32:29.503Z</updated>
+    <updated>2019-08-29T17:33:27.655Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a>]]></content>
     
@@ -76,6 +86,8 @@
       
     
     </summary>
+    
+      <category term="python1" scheme="https://www.qxdq.xyz/categories/python1/"/>
     
     
       <category term="a" scheme="https://www.qxdq.xyz/tags/a/"/>
