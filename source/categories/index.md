@@ -1,7 +1,11 @@
 ---
-title: 分类
-date: 2019-08-28 17:00:17
----
-layout: 分类1
+title: "文章分类"
+date: { { date } }
+top: 1
+tags:
+categories:
+layout: categories
 comments: false
 ---
+
+<!-- more -->

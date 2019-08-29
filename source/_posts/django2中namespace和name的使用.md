@@ -1,7 +1,8 @@
 ---
 title: django2中namespace和name的使用
 date: 2019-08-27 14:44:24
-tags:
+tags: [a,b,c]
+categories: python
 ---
 #### 一、在Django <= 1.11 我们通过关键词namespace参数定义名称空间
 

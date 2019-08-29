@@ -28,7 +28,8 @@ menu:
     text: Link
     url: https://www.qxdq.xyz
     target: _blank
-  About:
+  user-circle:
+    text: About
     url: /about
     target: _blank
 #  weibo:
