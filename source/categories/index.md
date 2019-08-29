@@ -1,7 +1,7 @@
 ---
-title: categories
+title: 分类
 date: 2019-08-28 17:00:17
 ---
-layout: categories
+layout: 分类1
 comments: false
 ---
