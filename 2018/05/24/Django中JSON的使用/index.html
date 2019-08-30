@@ -210,7 +210,17 @@ var usernames_r = usernames.replace(/\&amp;quot;/g, &apos;\&quot;&apos;);
 var usernames_r_p = JSON.parse(usernames_r);</code></pre><p>&emsp;&emsp;js中对json的处理也有两个函数。JSON.parse() 方法用于将一个 JSON 字符串转换为对象。另一个方法JSON.stringify() 用于将 JavaScript 值转换为 JSON 字符串。</p>
 <p>&emsp;&emsp;最终前端得到的usernames_r_p是个列表(原谅我取的变量名)，然后前端js就能使用列表中的数据啦！我们可以alert一下，看看usernames_r_p输出的是什么。</p>
 <p>json可以转化的类型很多，这边只举了个list的例子，其他类型的还有(自己尝试)：</p>
-<p><img src="https://s2.ax1x.com/2019/08/30/mXr25D.png" alt></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2019/08/30/mXr25D.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+
 <h2 id="二、前端向后端传JSON数据"><a href="#二、前端向后端传JSON数据" class="headerlink" title="二、前端向后端传JSON数据"></a>二、前端向后端传JSON数据</h2><p>js的JSON.stringify()方法+python的json.loads()方法。实例：</p>
 <p><strong>1、前端html中：</strong></p>
 <pre><code>&lt;script&gt;
