@@ -31,7 +31,6 @@ menu:
   user-circle:
     text: About
     url: /about
-    target: _blank
 #  weibo:
 #    url: http://www.weibo.com/ysweb
 #    target: _blank
@@ -128,11 +127,11 @@ gitment: false
 #   client_secret:
 
 # use gitalk://github.com/gitalk/gitalk
-gitalk: false
-#  owner:
-#  repo:
-#  client_id:
-#  client_secret:
+gitalk: true
+  owner: 'bob-yuan'
+  repo: 'https://bob-yuan.github.io/'
+  client_id: fdafff
+  client_secret: c5a9e7db288af8197d754e28cae3a85058675759
 
 # Valine Comment system. https://valine.js.org
 valine:
@@ -170,8 +169,8 @@ visit_counter:
 
 # 动态定义title
 title_change:
-  normal: Python学习与分享
-  leave: Python学习与分享
+  normal: 机会总是留给有准备的人
+  leave: 机会总是留给有准备的人
 
 # 设置为 true 发布后将使用 unpkg cdn 最新的主题样式
 # 如果想让你的自定义样式生效，把此项设为 false
