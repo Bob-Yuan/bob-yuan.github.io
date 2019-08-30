@@ -126,12 +126,22 @@ gitment: false
 #   client_id:
 #   client_secret:
 
-# use gitalk://github.com/gitalk/gitalk
-gitalk: true
-  owner: 'bob-yuan'
-  repo: 'https://bob-yuan.github.io/'
-  client_id: fdafff
+# gitalk detail: https://github.com/gitalk/gitalk
+#gitalk: true
+#  owner: bob-yuan
+#  repo: https://bob-yuan.github.io/
+#  client_id: fdafff
+#  client_secret: c5a9e7db288af8197d754e28cae3a85058675759
+
+
+gitalk:
+  enable: true
+  client_id: ac0c4a281720d5fdafff
   client_secret: c5a9e7db288af8197d754e28cae3a85058675759
+  repo: bob-yuan.github.io # 仓库名
+  owner: bob-yuan # 仓库作者
+  admin: bob-yuan  # 管理员
+  distractionFreeMode: false
 
 # Valine Comment system. https://valine.js.org
 valine:
