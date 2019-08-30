@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Boy&#39;s Blog</title>
   
-  <subtitle>Python学习与分享</subtitle>
+  <subtitle>机会总是留给有准备的人</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.qxdq.xyz/"/>
-  <updated>2019-08-29T16:56:41.187Z</updated>
+  <updated>2019-08-30T13:42:52.660Z</updated>
   <id>https://www.qxdq.xyz/</id>
   
   <author>
@@ -17,34 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://www.qxdq.xyz/2019/08/28/hello-world/"/>
-    <id>https://www.qxdq.xyz/2019/08/28/hello-world/</id>
-    <published>2019-08-28T11:14:27.250Z</published>
-    <updated>2019-08-29T16:56:41.187Z</updated>
+    <title>Django2实现文件下载（包含中文名的文件）</title>
+    <link href="https://www.qxdq.xyz/2019/08/16/Django2%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%EF%BC%88%E5%8C%85%E5%90%AB%E4%B8%AD%E6%96%87%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6%EF%BC%89/"/>
+    <id>https://www.qxdq.xyz/2019/08/16/Django2实现文件下载（包含中文名的文件）/</id>
+    <published>2019-08-15T16:56:45.000Z</published>
+    <updated>2019-08-30T13:42:52.660Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p><strong>前端html：</strong></p><pre><code>&lt;a href=&quot;/download/&quot;&gt;下载&lt;/a&gt;</code></pre><p><strong>url.py:</strong></p><pre><code>urlpatterns = [    path(&apos;download/&apos;, download)]</code></pre><p><strong>views.py:</strong></p><pre><code>from django.http import FileResponsedef download(request):    file = open(&apos;./static/download/简历.docx&apos;, &apos;rb&apos;)    response = FileResponse(file)    response[&apos;Content-Type&apos;] = &apos;application/vnd.openxmlformats-officedocument.wordprocessingml.document&apos;    response[&apos;Content-Disposition&apos;] = &apos;attachment;filename= &apos;+&apos;简历&apos;.encode(&apos;utf-8&apos;).decode(&apos;ISO-8859-1&apos;)+&apos;.docx&apos;    return response</code></pre><p>来解释一下download函数：</p><p>1、首先是打开存放文件的目录，‘.’表示根目录，也就是你整个django项目的根目录。我的“简历.docx”文件就放在djangoProjectName/static/download/目录下。</p><p>2、docx使用的MIME类型是 <strong>application/vnd.openxmlformats-officedocument.wordprocessingml.document</strong>。</p><p>3、因为文件名中有中文，如果直接在Content-Disposition中包含中文会导致文件名无法正常显示，因此要以 <strong>‘简历’.encode(‘utf-8’).decode(‘ISO-8859-1’)</strong> 的形式进行转码。</p><p>网上搜到常用的有三种方法实现文件下载，我这边就试了这一种，其他你可以自己去搜一下然后试试。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+        &lt;p&gt;&lt;strong&gt;前端html：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;a href=&amp;quot;/download/&amp;quot;&amp;gt;下载&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;url.py:&lt;/strong&gt;&lt;/p&gt;
+&lt;pr
       
     
     </summary>
     
-      <category term="C/C++" scheme="https://www.qxdq.xyz/categories/C-C/"/>
+      <category term="Django" scheme="https://www.qxdq.xyz/categories/Django/"/>
     
     
   </entry>
   
   <entry>
-    <title>django2中namespace和name的使用</title>
-    <link href="https://www.qxdq.xyz/2019/08/27/django2%E4%B8%ADnamespace%E5%92%8Cname%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>https://www.qxdq.xyz/2019/08/27/django2中namespace和name的使用/</id>
-    <published>2019-08-27T06:44:24.000Z</published>
-    <updated>2019-08-29T17:35:22.017Z</updated>
+    <title>Django2中namespace和name的使用</title>
+    <link href="https://www.qxdq.xyz/2019/07/27/Django2%E4%B8%ADnamespace%E5%92%8Cname%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>https://www.qxdq.xyz/2019/07/27/Django2中namespace和name的使用/</id>
+    <published>2019-07-27T10:24:34.000Z</published>
+    <updated>2019-08-30T13:42:52.660Z</updated>
     
     <content type="html"><![CDATA[<h4 id="一、在Django-lt-1-11-我们通过关键词namespace参数定义名称空间"><a href="#一、在Django-lt-1-11-我们通过关键词namespace参数定义名称空间" class="headerlink" title="一、在Django &lt;= 1.11 我们通过关键词namespace参数定义名称空间"></a>一、在Django &lt;= 1.11 我们通过关键词namespace参数定义名称空间</h4><p><strong>1、projects/urls.py</strong></p><pre><code>from django.conf.urls import url,includeurlpatterns = [    url(r&apos;blog/&apos;, include(&apos;blog.urls&apos;, namespace=&apos;blog&apos;)) ]</code></pre><p><strong>2、apps/urls.py</strong></p><pre><code>from django.conf.urls import urlfrom . import viewsurlpatterns = [    url(r&apos;^login/$&apos;, views.login, name=&quot;login&quot;),]</code></pre><h4 id="二、在Django-2-0-我们可以省略namespace，把namespace定义到被include的urls-py中去，使用app-name定义名称空间。"><a href="#二、在Django-2-0-我们可以省略namespace，把namespace定义到被include的urls-py中去，使用app-name定义名称空间。" class="headerlink" title="二、在Django 2.0+ 我们可以省略namespace，把namespace定义到被include的urls.py中去，使用app_name定义名称空间。"></a>二、在Django 2.0+ 我们可以省略namespace，把namespace定义到被include的urls.py中去，使用app_name定义名称空间。</h4><p><strong>1、projects/urls.py</strong></p><pre><code>urlpatterns = [    path(r&apos;^blog/&apos;, include(&apos;blog.urls&apos;)) ]</code></pre><p><strong>2、apps/urls.py</strong></p><pre><code>from django.urls import pathfrom . import viewsapp_name = &apos;blog&apos;urlpatterns = [    path(&apos;login/&apos;, views.login, name=&quot;login&quot;),]</code></pre><h4 id="三、在templates中我们还是像原来一样的使用方法"><a href="#三、在templates中我们还是像原来一样的使用方法" class="headerlink" title="三、在templates中我们还是像原来一样的使用方法"></a>三、在templates中我们还是像原来一样的使用方法</h4><pre><code>{% url 'blog:login' %}</code></pre>]]></content>
     
@@ -57,44 +59,98 @@
     
     </summary>
     
-      <category term="python" scheme="https://www.qxdq.xyz/categories/python/"/>
+      <category term="Django" scheme="https://www.qxdq.xyz/categories/Django/"/>
     
-    
-      <category term="a" scheme="https://www.qxdq.xyz/tags/a/"/>
-    
-      <category term="b" scheme="https://www.qxdq.xyz/tags/b/"/>
-    
-      <category term="c" scheme="https://www.qxdq.xyz/tags/c/"/>
     
   </entry>
   
   <entry>
-    <title>hello boy!</title>
-    <link href="https://www.qxdq.xyz/2019/08/27/hello-boy/"/>
-    <id>https://www.qxdq.xyz/2019/08/27/hello-boy/</id>
-    <published>2019-08-27T04:58:10.000Z</published>
-    <updated>2019-08-29T17:33:27.655Z</updated>
+    <title>Django中如何将多个app放到同个文件夹apps</title>
+    <link href="https://www.qxdq.xyz/2019/06/10/Django%E4%B8%AD%E5%A6%82%E4%BD%95%E5%B0%86%E5%A4%9A%E4%B8%AAapp%E6%94%BE%E5%88%B0%E5%90%8C%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9apps/"/>
+    <id>https://www.qxdq.xyz/2019/06/10/Django中如何将多个app放到同个文件夹apps/</id>
+    <published>2019-06-09T16:30:00.000Z</published>
+    <updated>2019-08-30T13:42:52.662Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<p>使用pytcharm新建apps文件夹，将之前的app目录全部拖入apps文件夹中，这时，如果我们import其他文件，pycharm就会用红色下划<br>波浪线提示报错</p><pre><code>from message import views</code></pre><p>我们可以通过右键文件夹——&gt;Mark Directory as——&gt;Sources Root，这样pycharm就知道可以去标记的文件夹找我们要import的模块<br>，就不会报错了。</p><p>但我们在终端运行python manage.py runserver 8080时,仍然会报模块不存在的错误</p><pre><code>ImportError: No module named message</code></pre><p>这是因为在pycharm标记Sources Root，但python解释器还是不知道源码路径，此时要在settings中设置app的路径：</p><pre><code>BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) #在后面添加：sys.path.insert(0,os.path.join(BASE_DIR,&apos;apps&apos;))</code></pre><p>注意：此时的from message import views必须写在设置路径语句之后。因此在慕课网教程《Python2.7到3.6完美升级强力django+杀手级xadmin》中，在settings.py中设置了app的路径之后，将from message import views写在了manage.py中时用cmd运行仍然会报错。因为manage.py这个文件是在settings.py之前执行的，也就是settings中设置的app路径还没生效。</p><p>还有记得要注册app哦:)</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-
+        &lt;p&gt;使用pytcharm新建apps文件夹，将之前的app目录全部拖入apps文件夹中，这时，如果我们import其他文件，pycharm就会用红色下划&lt;br&gt;波浪线提示报错&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from message import views&lt;/code&gt;&lt;/pr
       
     
     </summary>
     
-      <category term="python1" scheme="https://www.qxdq.xyz/categories/python1/"/>
+      <category term="Django" scheme="https://www.qxdq.xyz/categories/Django/"/>
     
     
-      <category term="a" scheme="https://www.qxdq.xyz/tags/a/"/>
+  </entry>
+  
+  <entry>
+    <title>Django中Ajax的使用</title>
+    <link href="https://www.qxdq.xyz/2018/11/19/Django%E4%B8%ADAjax%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>https://www.qxdq.xyz/2018/11/19/Django中Ajax的使用/</id>
+    <published>2018-11-19T11:38:23.000Z</published>
+    <updated>2019-08-30T13:42:52.661Z</updated>
     
-      <category term="b" scheme="https://www.qxdq.xyz/tags/b/"/>
+    <summary type="html">
     
-      <category term="c" scheme="https://www.qxdq.xyz/tags/c/"/>
+    </summary>
+    
+      <category term="Django" scheme="https://www.qxdq.xyz/categories/Django/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Django中JSON的使用</title>
+    <link href="https://www.qxdq.xyz/2018/05/24/Django%E4%B8%ADJSON%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>https://www.qxdq.xyz/2018/05/24/Django中JSON的使用/</id>
+    <published>2018-05-24T02:14:13.000Z</published>
+    <updated>2019-08-30T13:42:52.662Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、后端向前端传JSON数据"><a href="#一、后端向前端传JSON数据" class="headerlink" title="一、后端向前端传JSON数据"></a>一、后端向前端传JSON数据</h2><p>使用python的json.dumps方法+js的JSON.parse方法进行前后端json数据的传递</p><p><strong>1、后端views.py中：</strong></p><pre><code>def login(request):    Users = models.User.objects.all()    username = []    for i in Users:        username.append(i.username)    return render(request, &quot;login.html&quot;,{&apos;username&apos;: json.dumps(username)})</code></pre><p>&emsp;&emsp;其中 username是我User表中的一个字段，json.dumps()是python中json库的一个函数，将python对象编码成json字符串。python的json库还有一个函数是json.loads()，将已编码的json字符串解码为python对象，在下面也会介绍。</p><p>&emsp;&emsp;然后，通过render将json格式的username传到前端。</p><p><strong>2、前端html中：</strong></p><pre><code>var usernames = &quot;{{ username }}&quot;;var usernames_r = usernames.replace(/\&amp;quot;/g, &apos;\&quot;&apos;);var usernames_r_p = JSON.parse(usernames_r);</code></pre><p>&emsp;&emsp;js中对json的处理也有两个函数。JSON.parse() 方法用于将一个 JSON 字符串转换为对象。另一个方法JSON.stringify() 用于将 JavaScript 值转换为 JSON 字符串。</p><p>&emsp;&emsp;最终前端得到的usernames_r_p是个列表(原谅我取的变量名)，然后前端js就能使用列表中的数据啦！我们可以alert一下，看看usernames_r_p输出的是什么。</p><p>json可以转化的类型很多，这边只举了个list的例子，其他类型的还有(自己尝试)：</p><p><img src="https://s2.ax1x.com/2019/08/30/mXr25D.png" alt></p><h2 id="二、前端向后端传JSON数据"><a href="#二、前端向后端传JSON数据" class="headerlink" title="二、前端向后端传JSON数据"></a>二、前端向后端传JSON数据</h2><p>js的JSON.stringify()方法+python的json.loads()方法。实例：</p><p><strong>1、前端html中：</strong></p><pre><code>&lt;script&gt;    function sub()    {        var a = document.getElementById(&quot;aa&quot;).value;        var b = document.getElementById(&quot;bb&quot;).value;        var str = {&quot;a&quot;: a, &quot;b&quot;: b};        var str_json = JSON.stringify(str);        document.getElementById(&quot;cc&quot;).value = str_json;        return true;    }&lt;/script&gt;&lt;input type=&quot;text&quot; id=&quot;aa&quot;/&gt;&lt;input type=&quot;text&quot; id=&quot;bb&quot;/&gt;&lt;form method=&quot;POST&quot; οnsubmit=&quot;return sub()&quot;&gt;    {% csrf_token %}    &lt;input type=&quot;hidden&quot; name=&quot;data&quot; id=&quot;cc&quot;/&gt;    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;/&gt;&lt;/form&gt;</code></pre><p><strong>2、后端views.py中：</strong></p><pre><code>def login(request):    if request.method == &apos;POST&apos;:        print(request.POST[&apos;data&apos;])        result = json.loads(request.POST[&apos;data&apos;])        print(result[&apos;a&apos;])</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;一、后端向前端传JSON数据&quot;&gt;&lt;a href=&quot;#一、后端向前端传JSON数据&quot; class=&quot;headerlink&quot; title=&quot;一、后端向前端传JSON数据&quot;&gt;&lt;/a&gt;一、后端向前端传JSON数据&lt;/h2&gt;&lt;p&gt;使用python的json.dumps方法+
+      
+    
+    </summary>
+    
+      <category term="Django" scheme="https://www.qxdq.xyz/categories/Django/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>pycharm常用快捷键</title>
+    <link href="https://www.qxdq.xyz/2018/04/10/pycharm%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>https://www.qxdq.xyz/2018/04/10/pycharm常用快捷键/</id>
+    <published>2018-04-10T11:17:21.000Z</published>
+    <updated>2019-08-30T13:42:52.663Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>1.Pycharm中快捷键大全，遇到一个更新一个</strong></p><ul><li>撤销与反撤销：Ctrl + z，Ctrl + Shift + z</li><li>缩进、不缩进：Tab、Shift + tab</li><li>运行：Alt + Shift + F10</li><li>查看参数信息：Ctrl + p</li><li>快速跳转到函数定义：Ctrl + click/b</li><li>快速查看文档：Ctrl + q</li><li>删除当前光标位置前的单词：Ctrl + backspace（退格键）</li><li>展开/折叠代码块：Ctrl+Shift++/-</li><li>弹出最近编辑文件：Ctrl + E</li><li>重命名：Shift + F6</li></ul><p><strong>2.光标跳转</strong></p><ul><li>第一行：Ctrl + Home       </li><li>最后一行：Ctrl+End</li><li>行首：Home </li><li>行尾：End</li><li>下一段开头：Alt +↑</li><li>下一段开头： Alt +↓</li><li>退回当前单词开头：Ctrl +←</li><li>退回当前单词末尾：Ctrl + →</li><li>当光标在代码中间，如何回车到下一行：Shift + 回车</li><li>当一行代码太长时，我们如何切换到下一行，但是光标不变：Ctrl + 回车</li><li>跳转到第几行：Ctrl + G</li><li>跳转到最近编辑的代码位置：Ctrl + Shift + Backspace</li><li>跳到申明（如跳转到当前函数声明的地方）：Ctrl + B 或 Ctrl + Click</li><li>与上面相反，跳到执行位置：Ctrl + Alt + B</li><li>跳转到上一个或者下一个方法：Alt + Up/Down</li><li>跳到代码块的结束或开始：Ctrl + ] / [</li><li>跳转到上一个或下一个高亮错误地方：F2 / Shift + F2</li></ul><p><strong>3.代码选中</strong></p><ul><li>Shift + 光标跳转</li></ul><p><strong>4.删除</strong></p><ul><li>删除到字符结束：Ctrl +Delete</li><li>删除到字符开始：Ctrl + Backspace</li><li>删除选定行：Ctrl + Y</li><li>删除本行末尾换行符：Ctrl + shift + J</li></ul><p><strong>5.注释</strong></p><ul><li>行注释：Ctrl + /（取消行注释）</li><li>块注释：Ctrl+shift+/</li></ul><p><strong>6.查找和替换</strong></p><ul><li>查找：Ctrl + F</li><li>替换：Ctrl + R</li><li>下一个：F3</li><li>前一个：Shift + F3</li></ul><p><strong>7.复制</strong></p><ul><li>复制当前行或选定块：Ctrl + D</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;1.Pycharm中快捷键大全，遇到一个更新一个&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;撤销与反撤销：Ctrl + z，Ctrl + Shift + z&lt;/li&gt;
+&lt;li&gt;缩进、不缩进：Tab、Shift + tab&lt;/li&gt;
+&lt;li&gt;运行：Alt +
+      
+    
+    </summary>
+    
+      <category term="pycharm" scheme="https://www.qxdq.xyz/categories/pycharm/"/>
+    
     
   </entry>
   

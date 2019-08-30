@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Django2实现文件下载（包含中文名的文件） | Boy&#39;s Blog | 机会总是留给有准备的人</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content>
+    <meta name="description" content="前端html： &amp;lt;a href=&amp;quot;/download/&amp;quot;&amp;gt;下载&amp;lt;/a&amp;gt;url.py: urlpatterns = [     path(&amp;apos;download/&amp;apos;, download) ]views.py: from django.http import FileResponse  def download(request):     f">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django2实现文件下载（包含中文名的文件）">
+<meta property="og:url" content="https://www.qxdq.xyz/2019/08/16/Django2实现文件下载（包含中文名的文件）/index.html">
+<meta property="og:site_name" content="Boy&#39;s Blog">
+<meta property="og:description" content="前端html： &amp;lt;a href=&amp;quot;/download/&amp;quot;&amp;gt;下载&amp;lt;/a&amp;gt;url.py: urlpatterns = [     path(&amp;apos;download/&amp;apos;, download) ]views.py: from django.http import FileResponse  def download(request):     f">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-30T13:42:52.660Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django2实现文件下载（包含中文名的文件）">
+<meta name="twitter:description" content="前端html： &amp;lt;a href=&amp;quot;/download/&amp;quot;&amp;gt;下载&amp;lt;/a&amp;gt;url.py: urlpatterns = [     path(&amp;apos;download/&amp;apos;, download) ]views.py: from django.http import FileResponse  def download(request):     f">
+    
+        <link rel="alternate" type="application/atom+xml" title="Boy&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">袁博</h5>
+          <a href="mailto:yuanbo95@qq.com" title="yuanbo95@qq.com" class="mail">yuanbo95@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/bob-yuan" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.qxdq.xyz" target="_blank" >
+                <i class="icon icon-lg icon-link"></i>
+                Link
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user-circle"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Django2实现文件下载（包含中文名的文件）</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Django2实现文件下载（包含中文名的文件）</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-08-15T16:56:45.000Z" itemprop="datePublished" class="page-time">
+  2019-08-16
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Django/">Django</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-Django2实现文件下载（包含中文名的文件）"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Django2实现文件下载（包含中文名的文件）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-08-16 00:56:45" datetime="2019-08-15T16:56:45.000Z"  itemprop="datePublished">2019-08-16</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Django/">Django</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>前端html：</strong></p>
+<pre><code>&lt;a href=&quot;/download/&quot;&gt;下载&lt;/a&gt;</code></pre><p><strong>url.py:</strong></p>
+<pre><code>urlpatterns = [
+    path(&apos;download/&apos;, download)
+]</code></pre><p><strong>views.py:</strong></p>
+<pre><code>from django.http import FileResponse
+
+def download(request):
+    file = open(&apos;./static/download/简历.docx&apos;, &apos;rb&apos;)
+    response = FileResponse(file)
+    response[&apos;Content-Type&apos;] = &apos;application/vnd.openxmlformats-officedocument.wordprocessingml.document&apos;
+    response[&apos;Content-Disposition&apos;] = &apos;attachment;filename= &apos;+&apos;简历&apos;.encode(&apos;utf-8&apos;).decode(&apos;ISO-8859-1&apos;)+&apos;.docx&apos;
+    return response</code></pre><p>来解释一下download函数：</p>
+<p>1、首先是打开存放文件的目录，‘.’表示根目录，也就是你整个django项目的根目录。我的“简历.docx”文件就放在djangoProjectName/static/download/目录下。</p>
+<p>2、docx使用的MIME类型是 <strong>application/vnd.openxmlformats-officedocument.wordprocessingml.document</strong>。</p>
+<p>3、因为文件名中有中文，如果直接在Content-Disposition中包含中文会导致文件名无法正常显示，因此要以 <strong>‘简历’.encode(‘utf-8’).decode(‘ISO-8859-1’)</strong> 的形式进行转码。</p>
+<p>网上搜到常用的有三种方法实现文件下载，我这边就试了这一种，其他你可以自己去搜一下然后试试。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-08-30T13:42:52.660Z" itemprop="dateUpdated">2019-08-30 21:42:52</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/08/16/Django2实现文件下载（包含中文名的文件）/" target="_blank" rel="external">https://www.qxdq.xyz/2019/08/16/Django2实现文件下载（包含中文名的文件）/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://www.qxdq.xyz">
+            <img src="/img/avatar.jpg" alt="袁博">
+            袁博
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.qxdq.xyz/2019/08/16/Django2实现文件下载（包含中文名的文件）/&title=《Django2实现文件下载（包含中文名的文件）》 — Boy's Blog&pic=https://www.qxdq.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.qxdq.xyz/2019/08/16/Django2实现文件下载（包含中文名的文件）/&title=《Django2实现文件下载（包含中文名的文件）》 — Boy's Blog&source=博客主要记录了我学习python过程中的收获与感悟，以及其中我遇到的一些坑，希望能对后来人有所帮助。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.qxdq.xyz/2019/08/16/Django2实现文件下载（包含中文名的文件）/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Django2实现文件下载（包含中文名的文件）》 — Boy's Blog&url=https://www.qxdq.xyz/2019/08/16/Django2实现文件下载（包含中文名的文件）/&via=https://www.qxdq.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.qxdq.xyz/2019/08/16/Django2实现文件下载（包含中文名的文件）/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/07/27/Django2中namespace和name的使用/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Django2中namespace和name的使用</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'ac0c4a281720d5fdafff',
+          clientSecret: 'c5a9e7db288af8197d754e28cae3a85058675759',
+          repo: 'https://bob-yuan.github.io/',
+          owner: 'bob-yuan',
+          admin: ['bob-yuan'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>袁博 &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.qxdq.xyz/2019/08/16/Django2实现文件下载（包含中文名的文件）/&title=《Django2实现文件下载（包含中文名的文件）》 — Boy's Blog&pic=https://www.qxdq.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.qxdq.xyz/2019/08/16/Django2实现文件下载（包含中文名的文件）/&title=《Django2实现文件下载（包含中文名的文件）》 — Boy's Blog&source=博客主要记录了我学习python过程中的收获与感悟，以及其中我遇到的一些坑，希望能对后来人有所帮助。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.qxdq.xyz/2019/08/16/Django2实现文件下载（包含中文名的文件）/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Django2实现文件下载（包含中文名的文件）》 — Boy's Blog&url=https://www.qxdq.xyz/2019/08/16/Django2实现文件下载（包含中文名的文件）/&via=https://www.qxdq.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.qxdq.xyz/2019/08/16/Django2实现文件下载（包含中文名的文件）/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADK0lEQVR42u3aQW7bQBAEQP3/08o1gEG5e5YKpEnxZMgmtcUcJtu9j0d8PX9cf3/+8+ef91495+q3V5+8Xs/NFzY2NvaXsJ8vr+Trk+dffeNsJclr+uXVYGNjY69jJ4OnvStf3OvXka8tXxU2NjY2drLZmA25k9eEjY2NjX3XADthtOERNjY2NnYb5ZyMt3brkm9s3pilYWNjY388O29FP//nt/Tb2NjY2B/MfpZX8oTkt8k4bGvgQoGNjY29iN3G98l/6+8qFZKVzNaPjY2NvYl9Up0m24N8gLVjLLnrcuXY2NjYi9j5F+R/0yY5bTA0q4d/aUWwsbGxv5Y9C4xyXpvMzzYq9b3Y2NjY69jnQ+KuqiD/m3xVl6ESNjY29jp2spSc10ZUecQ/e0HD80fY2NjYH89utwftdqU9snNyhKg+coSNjY29jp1XvyfHdPK7ZkVvccwIGxsbeym7/SSvfvMA6zxgKo7sYGNjY385+x2lbHvgpq0fouH0+qVjY2NjL2K3IX4e699VDLRPKMoJbGxs7EXs/Ob24M6jvJKC4fxADzY2NvZW9myo5LVuW9DOiuR8c4KNjY29g30S7rSx/kk+n99VxEnY2NjYK9j5QpMNw+xVJlVxe6wzGmzY2NjY/wE7D5LycjdHnsRJ0SfY2NjYq9ntUDkpbtuCOaFG/yTY2NjYi9izCOkkWpoNoVnFWwdM2NjY2OvYs81GvsF439gbznBsbGzsL2SfRPCP0ZWHRP+o6MXGxsZexE42D3eFU+3oyklR2ISNjY29iN0OlfNxlYdWSeWcj1VsbGzsrew29M/vapeeh0QnGyFsbGzs3ey8fH1fkXDvP8zl87GxsbHXsU/C+vZgTbvVuW1o3dtRYGNjY38A+1ledfgebELOa+ZkoEZ9CDY2NvYXsu8dcm1kn4dH7Te2xTA2Njb2t7NnQ2tWNsyOVyb1bb3JwcbGxl7HTgD3dqbt2DuJlrCxsbGx28M6J4Xx+0qIX/ptbGxs7P+G3R6RaY9dzsqGPBTDxsbG3srOA6DZ0EoWej7Mii0QNjY29iL2LJTJH3qyjcmr4rxCwMbGxl7E/gPMfs5KLbDLsgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '机会总是留给有准备的人';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '机会总是留给有准备的人';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

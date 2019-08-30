@@ -14,25 +14,25 @@
     
     
     
-    <title>Hello World | Boy&#39;s Blog | Python学习与分享</title>
+    <title>Django中Ajax的使用 | Boy&#39;s Blog | 机会总是留给有准备的人</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content>
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="博客主要记录了我学习python过程中的收获与感悟，以及其中我遇到的一些坑，希望能对后来人有所帮助。">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://www.qxdq.xyz/2019/08/28/hello-world/index.html">
+<meta property="og:title" content="Django中Ajax的使用">
+<meta property="og:url" content="https://www.qxdq.xyz/2018/11/19/Django中Ajax的使用/index.html">
 <meta property="og:site_name" content="Boy&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="博客主要记录了我学习python过程中的收获与感悟，以及其中我遇到的一些坑，希望能对后来人有所帮助。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-29T16:56:41.187Z">
+<meta property="og:updated_time" content="2019-08-30T13:42:52.661Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Django中Ajax的使用">
+<meta name="twitter:description" content="博客主要记录了我学习python过程中的收获与感悟，以及其中我遇到的一些坑，希望能对后来人有所帮助。">
     
         <link rel="alternate" type="application/atom+xml" title="Boy&#39;s Blog" href="/atom.xml">
     
@@ -103,7 +103,7 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/about" target="_blank" >
+              <a href="/about"  >
                 <i class="icon icon-lg icon-user-circle"></i>
                 About
               </a>
@@ -120,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Hello World</div>
+        <div class="flex-col header-title ellipsis">Django中Ajax的使用</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -142,15 +142,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Hello World</h1>
+        <h1 class="title">Django中Ajax的使用</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-08-28T11:14:27.250Z" itemprop="datePublished" class="page-time">
-  2019-08-28
+                <time datetime="2018-11-19T11:38:23.000Z" itemprop="datePublished" class="page-time">
+  2018-11-19
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/C-C/">C/C++</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Django/">Django</a></li></ul>
 
             
         </h5>
@@ -164,24 +164,17 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-number">1.</span> <span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
 
-
-<article id="post-hello-world"
+<article id="post-Django中Ajax的使用"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Hello World</h1>
+        <h1 class="post-card-title">Django中Ajax的使用</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-08-28 19:14:27" datetime="2019-08-28T11:14:27.250Z"  itemprop="datePublished">2019-08-28</time>
+            <time class="post-time" title="2018-11-19 19:38:23" datetime="2018-11-19T11:38:23.000Z"  itemprop="datePublished">2018-11-19</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/C-C/">C/C++</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Django/">Django</a></li></ul>
 
 
 
@@ -193,20 +186,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+            
         </div>
 
         <blockquote class="post-copyright">
@@ -214,12 +194,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-08-29T16:56:41.187Z" itemprop="dateUpdated">2019-08-30 00:56:41</time>
+    最后更新时间：<time datetime="2019-08-30T13:42:52.661Z" itemprop="dateUpdated">2019-08-30 21:42:52</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/08/28/hello-world/" target="_blank" rel="external">https://www.qxdq.xyz/2019/08/28/hello-world/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/11/19/Django中Ajax的使用/" target="_blank" rel="external">https://www.qxdq.xyz/2018/11/19/Django中Ajax的使用/</a>
         
     </div>
     
@@ -244,7 +224,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.qxdq.xyz/2019/08/28/hello-world/&title=《Hello World》 — Boy's Blog&pic=https://www.qxdq.xyz/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.qxdq.xyz/2018/11/19/Django中Ajax的使用/&title=《Django中Ajax的使用》 — Boy's Blog&pic=https://www.qxdq.xyz/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -254,22 +234,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.qxdq.xyz/2019/08/28/hello-world/&title=《Hello World》 — Boy's Blog&source=博客主要记录了我学习python过程中的收获与感悟，以及其中我遇到的一些坑，希望能对后来人有所帮助。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.qxdq.xyz/2018/11/19/Django中Ajax的使用/&title=《Django中Ajax的使用》 — Boy's Blog&source=博客主要记录了我学习python过程中的收获与感悟，以及其中我遇到的一些坑，希望能对后来人有所帮助。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.qxdq.xyz/2019/08/28/hello-world/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.qxdq.xyz/2018/11/19/Django中Ajax的使用/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hello World》 — Boy's Blog&url=https://www.qxdq.xyz/2019/08/28/hello-world/&via=https://www.qxdq.xyz" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Django中Ajax的使用》 — Boy's Blog&url=https://www.qxdq.xyz/2018/11/19/Django中Ajax的使用/&via=https://www.qxdq.xyz" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.qxdq.xyz/2019/08/28/hello-world/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.qxdq.xyz/2018/11/19/Django中Ajax的使用/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -289,14 +269,21 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/06/10/Django中如何将多个app放到同个文件夹apps/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Django中如何将多个app放到同个文件夹apps</h4>
+      </a>
+    </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/08/27/django2中namespace和name的使用/" id="post-next" class="post-nav-link">
+      <a href="/2018/05/24/Django中JSON的使用/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">django2中namespace和name的使用</h4>
+        <h4 class="title">Django中JSON的使用</h4>
       </a>
     </div>
   
@@ -321,6 +308,30 @@
 
 
 
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'ac0c4a281720d5fdafff',
+          clientSecret: 'c5a9e7db288af8197d754e28cae3a85058675759',
+          repo: 'https://bob-yuan.github.io/',
+          owner: 'bob-yuan',
+          admin: ['bob-yuan'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
 
 
 
@@ -370,7 +381,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.qxdq.xyz/2019/08/28/hello-world/&title=《Hello World》 — Boy's Blog&pic=https://www.qxdq.xyz/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.qxdq.xyz/2018/11/19/Django中Ajax的使用/&title=《Django中Ajax的使用》 — Boy's Blog&pic=https://www.qxdq.xyz/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -380,22 +391,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.qxdq.xyz/2019/08/28/hello-world/&title=《Hello World》 — Boy's Blog&source=博客主要记录了我学习python过程中的收获与感悟，以及其中我遇到的一些坑，希望能对后来人有所帮助。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.qxdq.xyz/2018/11/19/Django中Ajax的使用/&title=《Django中Ajax的使用》 — Boy's Blog&source=博客主要记录了我学习python过程中的收获与感悟，以及其中我遇到的一些坑，希望能对后来人有所帮助。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.qxdq.xyz/2019/08/28/hello-world/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.qxdq.xyz/2018/11/19/Django中Ajax的使用/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hello World》 — Boy's Blog&url=https://www.qxdq.xyz/2019/08/28/hello-world/&via=https://www.qxdq.xyz" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Django中Ajax的使用》 — Boy's Blog&url=https://www.qxdq.xyz/2018/11/19/Django中Ajax的使用/&via=https://www.qxdq.xyz" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.qxdq.xyz/2019/08/28/hello-world/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.qxdq.xyz/2018/11/19/Django中Ajax的使用/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -406,7 +417,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIklEQVR42u3aS26EMBQEwNz/0mQbKYJ0255I2OVVBGRwsbDe7+srXtfN+nn37vnfz/y++3x92cLAwHgt43pc+bbytzzDnq/fUjEwMA5g3L042WhymCYnZP5eDAwMjJkjdQyGgYGB8Z+MJKDMU2IMDAyMtT89djdPnpfl4hgYGC9k5FX3///7I/0NDAyMVzGucq1qJ+TtgWhXGBgYWzNWJaj50Zl/mnY/GBgY5zDy7ebNgJyavCWqGmJgYGzHaEco2u22V5IgssBgYGBswZj/oTzRbRuTz09iYGCcxkjSyGtitWMcdaKLgYGxNSPfYvJfY8+MfVYMDIwzGfkh2LYel4WAbe0QAwPj5Yx8hCLZRN7IbNPgP3gYGBgHMGbSzuJEL6O4orSHgYGxNWOm4DUzYNEOTNQzIxgYGBsx2qZj3oxMCmdtWe0Wg4GBsTXj+QVtsDg2nJF/lKKzgYGBsSljbMRhrBg3GMM+UzEwMI5h5HfbMYuZFkIURGJgYBzDaJPYdrKjPcqLgh0GBsYBjPxwzJPPtkU6NS6GgYFxDGNsYCIJE8eaAUUyjIGBsSnjKlcybNHy2jZqFBRiYGBsxFjb5pwfuRj7TBgYGCcw2kO23dxY+Ni2HDAwME5gjBX0x9LaD6ayGBgYGPFr8uCy5WFgYGDkyeRMeDd/yC4IDTEwMF7ISJLYT1T48obEslwcAwPjhYyxgC9pFeQNg/mmJgYGxqaMb73Xk2Fe07HMAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aW27DMAwFUe9/0+4CGjlzSbuFqdFXgQi2TgKwfOg48Dp/rdWe1f7Vp6u3HE8sGTJkvJZxXi7+AnI48in5Oj6cRIYMGRswSADlABI0r4/OzyZDhgwZPO1DYRGnkjJkyJBxV8B9uriVIUOGjLSIXT2iFnD/rRaXIUPGCxm86/73fz8y35AhQ8arGHeVo51jpUH2w6lkyJAxmtFp4vNmHB8G1BJKGTJk7MYgFyx4i62WFK7eGHQNZciQMY5BttauRHRGlXyPDBkyZjPSoMnBPGTzBHT5BBkyZGzASPOr9JXpNY40fMuQIWM2gzfI0nB5vZMckYdvGTJkzGaQ9Ks2GOAB9HoPKqRlyJAxmtEvStOWGQcQngwZMvZh8JCaJpG1IMvL5uKtEBkyZIxg1EaJPH1M2UEolyFDxjaMu65W8GYcH1t+eZcMGTLGMfrXHa6TthOvIPmrZZEyZMgYxEgLSBJ80z1xQJchQ8ZoRofEL0P0Bw8BVYYMGUMZvBHWT/7IQKI4/pQhQ8ZmDN70r5WyN1yqqE1EZciQ8XJGfxiQNss6+5cBV4YMGeMYZ7jSlI58EbXW3pffQYYMGYMYfPUfmpa1tdaeDBkypjJ4gVqrHNMksgaWIUPGDgwe+PiogI82+X+AJU+GDBkywoDbD9PpM2XIkCGj1rgnDbU0yC6/OBkyZGzAqF2kSI+bkoJLGDJkyBjN4CGvNjGsBfHOWFSGDBmDGD+eCJ07wyiXNgAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
@@ -455,10 +466,10 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = 'Python学习与分享';
+            document.title = '机会总是留给有准备的人';
             clearTimeout(titleTime);
         } else {
-            document.title = 'Python学习与分享';
+            document.title = '机会总是留给有准备的人';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);
